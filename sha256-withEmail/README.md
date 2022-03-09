@@ -1,0 +1,1 @@
+Script to bruteforce a string starting with 7 0's on a sha256 encryption.
