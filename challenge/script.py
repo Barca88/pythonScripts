@@ -2,6 +2,12 @@ import logging
 import pandas as pd
 from bs4 import BeautifulSoup as b
 
+"""
+This program will open DLTINS_20210117_01of01/DLTINS_20210117_01of01.xml and processes it. Using BeautifulSoup to 
+navigate in the xml he iterates all the FinInstrm and will store the Id, FullNm, ClssfctnTp, CmmdtyDerivInd, NtnlCcy 
+and NtnlCcy on list1. With the list1 populated a dataFrame is created and then the output.csv is created.
+"""
+
 
 def main():
     logging.basicConfig(format='%(asctime)s::%(name)s::%(levelname)s::%(message)s',
@@ -11,7 +17,7 @@ def main():
     with open("DLTINS_20210117_01of01/DLTINS_20210117_01of01.xml", "r", encoding="utf8") as f:  # opening xml file
         content = f.read()
     logging.info('File read finish')
-    soup = b(content, features='lxml-xml')    # This is the slowest part I don't know how to improve it
+    soup = b(content, features='lxml-xml')  # This is the slowest part I don't know how to improve it
 
     list1 = []
     i = 0
