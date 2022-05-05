@@ -167,7 +167,6 @@ def main():
 
     if not my_unzip(pwd, os.getcwd()):
         logging.info('Unzip was not successful')
-
         return
 
     output = os.path.join(os.getcwd(), files[0][0].split('.')[0] + '.csv')
